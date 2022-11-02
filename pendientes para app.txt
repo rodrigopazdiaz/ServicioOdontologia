@@ -1,0 +1,4 @@
+- incluir login de doctores
+- incluir diagrama dental por paciente
+- crear cronograma de citas
+- mejorar funcionalidad para celulares
