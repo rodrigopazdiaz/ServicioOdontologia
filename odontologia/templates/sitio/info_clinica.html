@@ -1,0 +1,30 @@
+{% include 'sitio/cabecera.html' %}
+<div class="container">
+    <a name="nuevoDoctor" id="nuevoDoctor" class="btn btn-primary" href="/newdoctor" role="button">Agregar nuevo dentista</a>
+        <table id="table_id" class="table bg-light">
+            <thead>
+                <tr>
+                    <th>ID doctor</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Direccion</th>
+                    <th>Hora Inicio</th>
+                    <th>Hora Fin</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for datod in datosdoctor %}
+                <tr>
+                    <td>{{datod[0]}}</td>
+                    <td>{{datod[1]}}</td>
+                    <td>{{datod[2]}}</td>
+                    <td>{{datod[3]}}</td>
+                    <td>{{datod[4]}}</td>
+                    <td>{{datod[5]}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+</div>
+{% include 'sitio/pie.html' %}

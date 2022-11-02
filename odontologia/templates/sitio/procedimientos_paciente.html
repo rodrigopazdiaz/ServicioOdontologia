@@ -1,0 +1,68 @@
+{% include 'sitio/cabecera.html' %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <table id="table_id" class="table table-bordered bg-light">
+                <thead>
+                    <tr>
+                        <th>Nombre procedimiento</th>
+                        <th>Costo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dsp in datossumaop%}
+                    <tr>
+                        
+                        <td>{{dsp[0]}}</td>
+                        <td>{{dsp[1]}}</td>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-7">
+            <table id="table_id" class="table table-bordered bg-light">
+                <thead>
+                    <tr>
+                        <th>Fecha procedimiento</th>
+                        <th>Nombre procedimiento</th>
+                        <th>Costo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dpp in datosprocpacienteall%}
+                    <tr>
+                        <td>{{dpp[2]}}</td>
+                        <td>{{dpp[3]}}</td>
+                        <td>{{dpp[4]}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <table class="table table-bordered bg-light">
+                <thead>
+                    <tr>
+                        <th>Saldo Total</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        
+                        <td>
+                            {{c}}
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div> 
+</div>
+{% include 'sitio/pie.html' %}

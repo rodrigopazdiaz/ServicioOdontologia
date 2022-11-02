@@ -1,0 +1,79 @@
+{% include 'sitio/cabecera.html' %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">
+                    Datos de material
+                </div>
+                <div class="card-body">
+                    <form action="/materiales/guardar" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                          <label for="txtNameMaterial" class="form-label">Nombre:</label>
+                          <input type="text"
+                            class="form-control" name="txtNameMaterial" id="txtNameMaterial" aria-describedby="helpId" placeholder="Escriba el nombre del material">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtImgMaterial" class="form-label">Imagen:</label>
+                            <input type="file"
+                              class="form-control" name="txtImgMaterial" id="txtImgMaterial" aria-describedby="helpId" placeholder="Seleccione la imagen del material">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtTypeMaterial" class="form-label">Tipo:</label>
+                            <input type="radio"
+                               name="txtTypeMaterial" id="txtTypeMaterial1" value="herramienta" aria-describedby="helpId" placeholder="Escriba el tipo de material">
+                            <label for="txtTypeMaterial1">Herramienta</label>  
+                            <input type="radio"
+                               name="txtTypeMaterial" id="txtTypeMaterial2" value="acessorio" aria-describedby="helpId" placeholder="Escriba el tipo de material">
+                            <label for="txtTypeMaterial2">Accesorio</label>
+                            <input type="radio"
+                               name="txtTypeMaterial" id="txtTypeMaterial3" value="insumo" aria-describedby="helpId" placeholder="Escriba el tipo de material">
+                            <label for="txtTypeMaterial3">Insumo</label>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtIntMaterial" class="form-label">Cantidad:</label>
+                            <input type="number"
+                              class="form-control" name="txtIntMaterial" id="txtIntMaterial" aria-describedby="helpId" placeholder="Escriba la cantidad del material">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtCostMaterial" class="form-label">Costo unitario:</label>
+                            <input type="text"
+                              class="form-control" name="txtCostMaterial" id="txtCostMaterial" aria-describedby="helpId" placeholder="Escriba el costo unitario del material">
+                          </div>
+                        <button type="submit" class="btn btn-primary">Agregar</button>    
+                    </form>
+                </div>
+                <div class="card-footer text-muted">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <table id="table_id" class="table table-bordered bg-light">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Imagen</th>
+                        <th>Tipo</th>
+                        <th>Cantidad</th>
+                        <th>Costo Unitario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dm in datosmateriales %}
+                    <tr>
+                        <td>{{dm[1]}}</td>
+                        <td>
+                            <img width="60" src="/img/{{dm[2]}}" class="img-fluid rounded-top" alt="">
+                        </td>
+                        <td>{{dm[3]}}</td>
+                        <td>{{dm[4]}}</td>
+                        <td>S/{{dm[5]}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</div>
+{% include 'sitio/pie.html' %}

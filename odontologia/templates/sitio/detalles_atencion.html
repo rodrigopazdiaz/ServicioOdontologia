@@ -1,0 +1,41 @@
+{% include 'sitio/cabecera.html' %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header">
+                        Datos de la consulta
+                    </div>
+                    <div class="card-body">
+                        <div class="col-md-5">
+                            <div class="mb-3">
+                              <label for="" class="form-label">Nombre de paciente: <br/><a>{{d1[0][0]}}</a></label>
+                            </div>  
+                            <div class="mb-3">
+                                <label for="" class="form-label">Apellido de paciente: <br/><a>{{d1[0][1]}}</a></label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Doctor: <br/><a>{{d2[0][0]}}</a></label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Diagnosis: <br/><a>{{d1[0][2]}}</a></label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Tratamiento: <br/><a>{{d1[0][3]}}</a></label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Fecha de atencion: <br/><a>{{d1[0][4]}}</a></label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Costo Total: <br/><a>{{d1[0][5]}}</a></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% include 'sitio/pie.html' %}

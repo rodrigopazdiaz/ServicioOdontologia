@@ -1,0 +1,48 @@
+{% include 'sitio/cabecera.html' %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header">
+                        Ingresar datos del dentista
+                    </div>
+                    <div class="card-body">
+                        <div class="col-md-5">
+                            <form action="/newdoctor/guardar" method="post" enctype="multipart/form-data">
+                            <div class="mb-3">
+                              <label for="txtNombreD" class="form-label">Nombre completo del dentista:</label>
+                              <input type="text"
+                        class="form-control" name="txtNombreD" id="txtNombreD" aria-describedby="helpId" placeholder="Escriba el nombre del dentista">
+                            </div>  
+                            <div class="mb-3">
+                                <label for="txtTelefonoD" class="form-label">Telefono:</label>
+                                <input type="text"
+                        class="form-control" name="txtTelefonoD" id="txtTelefonoD" aria-describedby="helpId" placeholder="Escriba el telefono del dentista">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtDireccionD" class="form-label">Direccion:</label>
+                                <input type="text"
+                        class="form-control" name="txtDireccionD" id="txtDireccionD" aria-describedby="helpId" placeholder="Escriba la direccion del dentista">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtHoraInicioD" class="form-label">Horario de inicio:</label>
+                                <input type="time"
+                        class="form-control" name="txtHoraInicioD" id="txtHoraInicioD" aria-describedby="helpId" placeholder="Escriba el horario de inicio del dentista">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtHoraFinD" class="form-label">Horario de salida:</label>
+                                <input type="time"
+                        class="form-control" name="txtHoraFinD" id="txtHoraFinD" aria-describedby="helpId" placeholder="Escriba el horario de salida del dentista">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+                        </form>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% include 'sitio/pie.html' %}

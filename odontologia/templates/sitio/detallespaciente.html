@@ -1,0 +1,46 @@
+{% include 'sitio/cabecera.html' %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header">
+                        Datos del paciente
+                    </div>
+                    <div class="card-body">
+                        <div class="col-md-5">
+                            {% for dpa in datospacienteall %}
+                            <div class="mb-3">
+                              <label for="" class="form-label">Nombre de paciente: <br/><a>{{dpa[1]}}</a></label>
+                            </div>  
+                            <div class="mb-3">
+                                <label for="" class="form-label">Apellido de paciente: <br/><a>{{dpa[2]}}</a></label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Telefono: <br/><a>{{dpa[3]}}</a></label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Correo: <br/><a>{{dpa[4]}}</a></label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Direccion: <br/><a>{{dpa[5]}}</a></label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">DNI: <br/><a>{{dpa[6]}}</a></label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Diagnosis: <br/><a>{{dpa[7]}}</a></label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Deuda Pendiente: <br/><a>{{dpa[8]}}</a></label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% include 'sitio/pie.html' %}

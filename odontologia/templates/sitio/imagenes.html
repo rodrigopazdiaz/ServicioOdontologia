@@ -1,0 +1,61 @@
+{% include 'sitio/cabecera.html' %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">
+                    Imagenes de paciente
+                </div>
+                <div class="card-body">
+                    <form action="/imagenes/guardar" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                          <label for="txtNamePaciente" class="form-label">Nombre Paciente:</label>
+                          <input type="text"
+                            class="form-control" name="txtNamePaciente" id="txtNamePaciente" aria-describedby="helpId" value="{{datospaciente[0][0]}}" placeholder="Escriba el nombre del paciente">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtImgMaterial" class="form-label">Imagen:</label>
+                            <input type="file"
+                              class="form-control" name="txtImgMaterial" id="txtImgMaterial" aria-describedby="helpId" placeholder="Seleccione la imagen del paciente">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtTituloImagen" class="form-label">Titulo:</label>
+                            <input type="text"
+                            class="form-control" name="txtTituloImagen" id="txtTituloImagen" aria-describedby="helpId" placeholder="Escriba el titulo de la imagen del paciente">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtDescrImagen" class="form-label">Descripcion:</label>
+                            <input type="text"
+                            class="form-control" name="txtDescrImagen" id="txtDescrImagen" aria-describedby="helpId" placeholder="Escriba la descripcion de la imagen del paciente">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Agregar</button>    
+                    </form>
+                </div>
+                <div class="card-footer text-muted">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <table id="table_id" class="table table-bordered bg-light">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Titulo</th>
+                        <th>Descripcion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dm in datosimagen %}
+                    <tr>
+                        <td><img width="60" src="/imgpaciente/{{dm[2]}}" class="img-fluid rounded-top" alt=""></td>
+                        <td>{{dm[3]}}</td>
+                        <td>{{dm[4]}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</div>
+{% include 'sitio/pie.html' %}

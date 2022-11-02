@@ -1,0 +1,56 @@
+{% include 'sitio/cabecera.html' %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">
+                    Ingresar datos de la consulta
+                </div>
+                <div class="card-body">
+                    <div class="col-md-5">
+                        <form action="/newconsulta/guardar" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                          <label for="txtIDP" class="form-label">Nombre de paciente:</label>
+                          <select name="txtIDP">
+                            <option selected></option>
+                            {% for np in nombrep %}
+                            <option value="{{np[0]}}">{{np[1]}}</option>
+                            {% endfor %}
+                          </select>
+                        </div>  
+                        <div class="mb-3">
+                            <label for="txtIDD" class="form-label">Nombre de dentista:</label>
+                            <select name="txtIDD">
+                                <option selected></option>
+                                {% for nd in nombred %}
+                                <option value="{{nd[0]}}">{{nd[1]}}</option>
+                                {% endfor %}
+                              </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtDiagnosisC" class="form-label">Tratamiento:</label>
+                            <input type="text"
+                    class="form-control" name="txtDiagnosisC" id="txtDiagnosisC" aria-describedby="helpId" placeholder="Escriba el tratamiento del paciente">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtFA" class="form-label">Fecha de Atencion:</label>
+                            <input type="datetime-local"
+                    class="form-control" name="txtFA" id="txtFA" aria-describedby="helpId" placeholder="Escriba la direccion del paciente">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtCostoT" class="form-label">Costo de Tratamiento:</label>
+                            <input type="text"
+                    class="form-control" name="txtCostoT" id="txtCostoT" aria-describedby="helpId" placeholder="Escriba el costo del tratamiento">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Agregar</button>
+                    </form>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'sitio/pie.html' %}

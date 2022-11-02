@@ -1,0 +1,59 @@
+{% include 'sitio/cabecera.html' %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">
+                    Datos de presupuesto por paciente
+                </div>
+                <div class="card-body">
+                    <form action="/procedimientos/guardar" method="post">
+                        <div class="mb-3">
+                            <label for="txtNamePaciente" class="form-label">Nombre de paciente:</label>
+                            <select name="txtNamePaciente">
+                                <option selected></option>
+                                {% for np in nombrep %}
+                                <option value="{{np[0]}}">{{np[1]}}</option>
+                                {% endfor %}
+                              </select>
+                          </div>
+                        <div class="mb-3">
+                          <label for="txtNameOperation" class="form-label">Nombre de operacion:</label>
+                          <input type="text"
+                            class="form-control" name="txtNameOperation" id="txtNameOperation" aria-describedby="helpId" placeholder="Escriba el nombre de la operacion">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtCostOperation" class="form-label">Costo de operacion:</label>
+                            <input type="text"
+                              class="form-control" name="txtCostOperation" id="txtCostOperation" aria-describedby="helpId" placeholder="Escriba el costo de la operacion">
+                          </div>
+                          <button type="submit" class="btn btn-primary">Agregar</button>
+                    </form>
+                </div>
+                <div class="card-footer text-muted">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <table id="table_id" class="table table-bordered bg-light">
+                <thead>
+                    <tr>
+                        <th>Nombre paciente</th>
+                        <th>Nombre operacion</th>
+                        <th>Costo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for do in datosoperacion%}
+                    <tr>
+                        <td>{{do[0]}}</td>
+                        <td>{{do[1]}}</td>
+                        <td>S/{{do[2]}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div> 
+</div>
+{% include 'sitio/pie.html' %}

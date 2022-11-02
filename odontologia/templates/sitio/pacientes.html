@@ -1,0 +1,52 @@
+{% include 'sitio/cabecera.html' %}
+<div class="container">
+        <a name="nuevoPaciente" id="nuevoPaciente" class="btn btn-primary" href="/newpaciente" role="button">Agregar nuevo paciente</a>
+            <table id="table_id" class="table bg-light">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Telefono</th>
+                        <th>Diagnosis</th>
+                        <th>Deuda Pendiente</th>
+                        <th>Mas informacion</th>
+                        <th>Procedimientos</th>
+                        <th>Agregar archivos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for datop in datospaciente %}
+                    <tr>
+                        <td>{{datop[1]}}</td>
+                        <td>{{datop[2]}}</td>
+                        <td>{{datop[3]}}</td>
+                        <td>{{datop[4]}}</td>
+                        <td>{{datop[5]}}</td>
+                        <td>
+                            <form action="/detallespaciente" method="post">
+                                <input value="{{datop[0]}}" type="hidden" name="txtIDp" id="txtIDp">
+                                <button type="submit" class="btn btn-primary">Detalles</button>
+                            </form>
+                            
+                        </td>
+                        <td>
+                            <form action="/procedimientospaciente" method="post">
+                                <input value="{{datop[0]}}" type="hidden" name="txtIDp" id="txtIDp">
+                                <button type="submit" class="btn btn-primary">Procedimientos</button>
+                            </form>
+                            
+                        </td>
+                        <td>
+                            <form action="/imagenes" method="post">
+                                <input value="{{datop[0]}}" type="hidden" name="txtIDp" id="txtIDp">
+                                <button type="submit" class="btn btn-primary">Agregar Imagenes</button>
+                            </form>
+                            
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+</div>
+{% include 'sitio/pie.html' %}

@@ -1,0 +1,58 @@
+{% include 'sitio/cabecera.html' %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header">
+                        Ingresar datos del paciente
+                    </div>
+                    <div class="card-body">
+                        <div class="col-md-5">
+                            <form action="/newpaciente/guardar" method="post" enctype="multipart/form-data">
+                            <div class="mb-3">
+                              <label for="txtNombreP" class="form-label">Nombre de paciente:</label>
+                              <input type="text"
+                        class="form-control" name="txtNombreP" id="txtNombreP" aria-describedby="helpId" placeholder="Escriba el nombre del paciente">
+                            </div>  
+                            <div class="mb-3">
+                                <label for="txtApellidoP" class="form-label">Apellido de paciente:</label>
+                                <input type="text"
+                        class="form-control" name="txtApellidoP" id="txtApellidoP" aria-describedby="helpId" placeholder="Escriba el apellido del paciente">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtTelefonoP" class="form-label">Telefono:</label>
+                                <input type="text"
+                        class="form-control" name="txtTelefonoP" id="txtTelefonoP" aria-describedby="helpId" placeholder="Escriba el telefono del paciente">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtCorreoP" class="form-label">Correo:</label>
+                                <input type="text"
+                        class="form-control" name="txtCorreoP" id="txtCorreoP" aria-describedby="helpId" placeholder="Escriba el correo electronico del paciente">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtDireccionP" class="form-label">Direccion:</label>
+                                <input type="text"
+                        class="form-control" name="txtDireccionP" id="txtDireccionP" aria-describedby="helpId" placeholder="Escriba la direccion del paciente">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtDniP" class="form-label">DNI:</label>
+                                <input type="text"
+                        class="form-control" name="txtDniP" id="txtDniP" aria-describedby="helpId" placeholder="Escriba el DNI del paciente">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtDiagnosisP" class="form-label">Diagnosis:</label>
+                                <input type="text"
+                        class="form-control" name="txtDiagnosisP" id="txtDiagnosisP" aria-describedby="helpId" placeholder="Escriba el diagnosis del paciente">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+                        </form>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% include 'sitio/pie.html' %}

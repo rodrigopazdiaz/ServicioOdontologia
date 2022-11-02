@@ -1,0 +1,34 @@
+{% include 'sitio/cabecera.html' %}
+<div class="container" >
+        <a name="nuevaConsulta" id="nuevaConsulta" class="btn btn-primary" href="/newconsulta" role="button">Agregar nueva consulta<br/></a>
+            
+            <table id="table_id" class="table bg-light">
+                <thead>
+                    <tr>
+                        <th>ID consulta</th>
+                        <th>Nombre</th>
+                        <th>Tratamiento</th>
+                        <th>Fecha de atencion</th>
+                        <th>Mas informacion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dc in datosconsulta %}
+                    <tr>
+                        <td>{{dc[0]}}</td>
+                        <td>{{dc[1]}}</td>
+                        <td>{{dc[2]}}</td>
+                        <td>{{dc[3]}}</td>
+                        <td>
+                            <form action="/detallesatencion" method="post">
+                                <input value="{{dc[0]}}" type="hidden" name="txtIDc" id="txtIDc">
+                                <button type="submit" class="btn btn-primary">Detalles</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+</div>
+{% include 'sitio/pie.html' %}

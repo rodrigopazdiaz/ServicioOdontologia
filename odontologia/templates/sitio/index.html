@@ -1,0 +1,17 @@
+{% include 'sitio/cabecera.html' %}
+    <div class="p-5 bg-light">
+        <div class="container" style="background-image: url('https://www.teeth22.com/wp-content/uploads/2020/03/absceso-dental-800x399.png'); height: 100vh">
+            <h1 class="display-3">Pagina inicial de servicio de odontologia</h1>
+            <p class="lead">Bienvenid@ <strong>{{session["usuario"]}}</strong> al administrador del sitio web</h1></p>
+            <hr class="my-2">
+            <p></p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="/consulta" role="button">Iniciar consulta</a>
+            </p>
+        </div>
+        <div class="container" id='calendar' >
+
+        </div>
+    </div>
+    
+{% include 'sitio/pie.html' %}
